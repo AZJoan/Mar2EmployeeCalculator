@@ -13,28 +13,19 @@ public class EmployeeDB {
     private List<Employee> empList = new ArrayList<>();
 
     // get all employees
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees() {
         return empList;
     }
 
     // add an employee to array list
-    public void addEmployee(Employee employee){
+    public void addEmployee(Employee employee) {
         empList.add(employee);
     }
 
     // find an employee by empId
-    public Employee findEmployeeById(String id){
-        for(Employee oneEmp : empList){
-            if(oneEmp.getEmpId().equalsIgnoreCase(id)){
-                return oneEmp;
-            }
-        }
-        return null;
-    }
-    // find an employee by empPos
-    public Employee findEmployeeByPos(String pos){
-        for(Employee oneEmp : empList){
-            if(oneEmp.getEmpPos().equalsIgnoreCase(pos)){
+    public Employee findEmployeeById(String id) {
+        for (Employee oneEmp : empList) {
+            if (oneEmp.getEmpId().equalsIgnoreCase(id)) {
                 return oneEmp;
             }
         }
