@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Employee Calculation</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+
+</head>
+<body>
+<p></p><p></p>
+<form id="InputFieldsButtons">
+    <h1 class="section">Employee Calculator</h1>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2 card box">
+            <input type="text" id="txtId" placeholder="Employee ID"/>
+        </div>
+        <div class="col-md-2 card box">
+            <input type="text" id="txtFName" placeholder="First Name"/>
+        </div>
+        <div class="col-md-2 card box">
+            <input type="text" id="txtLName" placeholder="Last Name"/>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2 card box">
+            <select name="Employee Position" size="0" id="txtPos">
+                <option value="Cashier">Cashier</option>
+                <option value="Stocker">Stocker</option>
+                <option value="Sales">Sales</option>
+                <option value="Buyer">Buyer</option>
+                <option value="Marketing">Marketing</option>
+            </select>
+        </div>
+        <div class="col-md-2 card box">
+            <input type="number" id="txtSal" placeholder="Salary"/>
+        </div>
+        <div class="col-md-2 card box">
+            <button class="btn btn-success" id="btnAddEmp">Add Employee</button>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <p></p><p></p><p></p>
+    <h2 class="section">Total Employee Salaries</h2>
+
+    <div class="row colhdg">
+        <div class="col-md-2"></div>
+        <div class="col-md-2 card p1">
+            <p1>Total Annual Salaries</p1>
+        </div>
+        <div class="col-md-2 card p1">
+            <p1>Total Monthly Salaries </p1>
+        </div>
+        <div class="col-md-2 card p1">
+            <p1>Total BiMonthly Salaries</p1>
+        </div>
+        <div class="col-md-2 card p1">
+            <p1>Total BiWeekly Salaries</p1>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <div id="SalTotals" class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2 card box">
+            <p th:id="TSal"></p>
+        </div>
+        <div class="col-md-2 card box">
+            <p th:id="TMon"></p>
+        </div>
+        <div class="col-md-2 card box">
+            <p th:id="TBiM"></p>
+        </div>
+        <div class="col-md-2 card box">
+            <p th:id="TBiW"></p>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
+    <p></p><p></p><p></p>
+    <h2 class="section">Search By Employee Id or By Job Position</h2>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div style="width:100px" class="col-md-2 card box">
+            <input type="text" id="txtSearchId" placeholder="Employee Id"/>
+        </div>
+        <div style="width:100px" class="col-md-2 card box">
+            <button class="btn btn-primary" id="btnSearchId">Find By Id</button>
+        </div>
+        <div class="col-md-2 card box">
+            <select style="width:150px;" name="Search Position" size="0" id="txtSearchPos">
+                <option value="Cashier">Cashier</option>
+                <option value="Stocker">Stocker</option>
+                <option value="Sales">Sales</option>
+                <option value="Buyer">Buyer</option>
+                <option value="Marketing">Marketing</option>
+            </select>
+        </div>
+        <div style="width:150px" class="col-md-2 card box">
+            <button class="btn btn-primary" id="btnSearchPos">Find By Position</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</form>
+
+<p></p><p></p>
+<h2 class="section">Employee List</h2>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-2 card p1">
+        <p1>Employee Id</p1>
+    </div>
+    <div class="col-md-2 card p1">
+        <p1>Employee Name</p1>
+    </div>
+    <div class="col-md-2 card p1">
+        <p1>Employee Position</p1>
+    </div>
+    <div class="col-md-2 card p1">
+        <p1>Employee Salary</p1>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div id="container"></div>
+
+</body>
+</html>
